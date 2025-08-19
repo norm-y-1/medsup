@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --card: theme('colors.white');
+  --accent: theme('colors.brand.600');
+}
+
+.btn {
+  @apply inline-flex items-center justify-center rounded-2xl px-4 py-2 font-medium shadow-soft transition hover:-translate-y-0.5 hover:shadow-lg;
+}
+.btn-primary {
+  @apply bg-brand-600 text-white hover:bg-brand-700;
+}
+.card {
+  @apply bg-white rounded-2xl shadow-soft border border-slate-100;
+}
