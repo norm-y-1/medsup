@@ -1,5 +1,6 @@
 import { Link, Route, Routes, useNavigate } from 'react-router-dom'
 import { CatalogPage } from './pages/CatalogPage'
+import CryptoPaymentIntegration from './pages/CryptoPaymentIntegration'
 import { useUnit } from 'effector-react'
 import { $cartCount, openCart } from './features/cart/model/cart'
 import { CartDrawer } from './features/cart/ui/CartDrawer'
@@ -21,9 +22,16 @@ export const App = () => {
             >
               MedSup Pro
             </button>
-            <nav className="hidden md:flex gap-6 text-sm text-slate-600">
-              <Link to="/" className="hover:text-brand-700">Catalog</Link>
-              <a href="https://medline.com" target="_blank" rel="noreferrer" className="hover:text-brand-700">Medline</a>
+            <nav className="flex gap-4">
+              <Link to="/" className="text-sm font-medium text-gray-600 hover:text-gray-900">
+                Catalog
+              </Link>
+              <Link to="/crypto-payment" className="text-sm font-medium text-gray-600 hover:text-gray-900">
+                Crypto Payment
+              </Link>
+              <Link to="https://medline.com" target='_blank' className="text-sm font-medium text-gray-600 hover:text-gray-900">
+                Medline
+              </Link>
             </nav>
           </div>
           <button
@@ -42,6 +50,7 @@ export const App = () => {
       <main className="mx-auto max-w-6xl px-4 py-8">
         <Routes>
           <Route path="/" element={<CatalogPage />} />
+          <Route path="/crypto-payment" element={<CryptoPaymentIntegration />} />
         </Routes>
       </main>
 

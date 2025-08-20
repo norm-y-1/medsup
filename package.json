@@ -3,10 +3,18 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
+  "workspaces": [
+    "apps/*"
+  ],
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 5173",
+    "dev:crypto-payment": "cd apps/crypto-payment && yarn dev",
+    "dev:all": "concurrently \"yarn dev:crypto-payment\" \"yarn dev\"",
     "build": "tsc -b && vite build",
+    "build:crypto-payment": "cd apps/crypto-payment && yarn build",
+    "build:all": "yarn build:crypto-payment && yarn build",
     "preview": "vite preview",
+    "preview:crypto-payment": "cd apps/crypto-payment && yarn preview",
     "test:jest": "jest --config jest.config.ts",
     "test:cypress": "cypress run",
     "test:jasmine": "jasmine --config=jasmine.json"
@@ -15,6 +23,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@originjs/vite-plugin-federation": "^1.4.1",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.7.0",
     "@testing-library/react": "^16.3.0",
@@ -34,6 +43,7 @@
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.20",
     "autoprefixer": "^10.4.20",
+    "concurrently": "^9.2.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^30.0.5",
     "jest-environment-jsdom": "^30.0.5",

@@ -7,9 +7,10 @@ export default defineConfig({
   plugins: [
     react(),
     federation({
-      name: 'shell',
-      remotes: {
-        'crypto-payment': 'http://localhost:3001/remoteEntry.js'
+      name: 'crypto_payment',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './CryptoPaymentApp': './src/components/CryptoPaymentApp.tsx'
       },
       shared: {
         react: {
@@ -17,21 +18,18 @@ export default defineConfig({
         },
         'react-dom': {
           requiredVersion: '^19.1.1'
-        },
-        effector: {
-          requiredVersion: '^23.4.2'
-        },
-        'effector-react': {
-          requiredVersion: '^23.3.0'
         }
       }
     })
   ],
   server: {
-    port: 5173
+    port: 3001,
+    cors: true
   },
   build: {
-    target: 'esnext'
+    target: 'esnext',
+    minify: false,
+    cssCodeSplit: false
   },
   define: {
     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
