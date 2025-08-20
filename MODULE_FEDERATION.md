@@ -36,12 +36,6 @@ This project implements a **Module Federation** architecture using Vite, where t
 # Install root dependencies
 yarn install
 
-# Install crypto-payment dependencies
-cd apps/crypto-payment
-yarn install
-cd ../..
-```
-
 ### 2. Start Both Applications
 ```bash
 # On Windows
@@ -50,10 +44,6 @@ cd ../..
 # On Linux/Mac
 ./start-dev.sh
 
-# Or manually:
-# Terminal 1: Start crypto-payment first
-cd apps/crypto-payment && yarn dev
-
 # Terminal 2: Start shell app
 yarn dev
 ```
@@ -61,30 +51,8 @@ yarn dev
 ### 3. Access the Applications
 - **Shell App**: http://localhost:5173
 - **Crypto Payment MFE**: http://localhost:3001
-- **Federated Integration**: http://localhost:5173/crypto-payment
 
 ## Module Federation Configuration
-
-### Remote (Crypto Payment - Port 3001)
-
-```typescript
-// apps/crypto-payment/vite.config.ts
-federation({
-  name: 'crypto-payment',
-  filename: 'remoteEntry.js',
-  exposes: {
-    './CryptoPaymentApp': './src/components/CryptoPaymentApp.tsx',
-    './store': './src/store/paymentStore.ts',
-    './types': './src/types/index.ts'
-  },
-  shared: {
-    react: { requiredVersion: '^19.1.1' },
-    'react-dom': { requiredVersion: '^19.1.1' },
-    effector: { requiredVersion: '^23.4.2' },
-    'effector-react': { requiredVersion: '^23.3.0' }
-  }
-})
-```
 
 ### Shell (Main App - Port 5173)
 

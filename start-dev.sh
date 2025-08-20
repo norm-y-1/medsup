@@ -1,26 +1,26 @@
 #!/bin/bash
 
-# Script to start both the main app and crypto-payment microfrontend
+# Script to start both the main app and adyen-payment microfrontend
 
-echo "🚀 Starting MedSup Pro with Crypto Payment Microfrontend..."
+echo "🚀 Starting MedSup Pro with Adyen Payment Microfrontend..."
 
 # Function to kill background processes on exit
 cleanup() {
     echo "🛑 Stopping all services..."
-    kill $MAIN_PID $CRYPTO_PID 2>/dev/null
+    kill $MAIN_PID $ADYEN_PID 2>/dev/null
     exit
 }
 
 # Set up trap to cleanup on script exit
 trap cleanup SIGINT SIGTERM EXIT
 
-# Start crypto-payment microfrontend
-echo "📱 Starting Crypto Payment Microfrontend on port 3001..."
-cd apps/crypto-payment
+# Start adyen-payment microfrontend
+echo "📱 Starting Adyen Payment Microfrontend on port 3000..."
+cd apps/adyen-payment
 yarn dev &
-CRYPTO_PID=$!
+ADYEN_PID=$!
 
-# Wait a bit for the crypto service to start
+# Wait a bit for the adyen service to start
 sleep 3
 
 # Start main application
@@ -31,8 +31,8 @@ MAIN_PID=$!
 
 echo "✅ Both services are starting..."
 echo "🏥 Main App: http://localhost:5173"
-echo "💰 Crypto Payment: http://localhost:3001"
-echo "📖 Integration Example: http://localhost:5173/crypto-payment-integration"
+echo "� Adyen Payment: http://localhost:3000"
+echo "📖 Integration Example: http://localhost:5173/adyen-payment"
 echo ""
 echo "Press Ctrl+C to stop all services"
 

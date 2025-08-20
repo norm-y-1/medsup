@@ -1,6 +1,5 @@
 import { Link, Route, Routes, useNavigate } from 'react-router-dom'
 import { CatalogPage } from './pages/CatalogPage'
-import CryptoPaymentIntegration from './pages/CryptoPaymentIntegration'
 import AdyenPaymentIntegration from './pages/AdyenPaymentIntegration'
 import { useUnit } from 'effector-react'
 import { $cartCount, openCart } from './features/cart/model/cart'
@@ -47,13 +46,6 @@ export const App = () => {
                 {isMFEDropdownOpen && (
                   <div className="absolute top-full left-0 mt-1 bg-white border border-gray-200 rounded-md shadow-lg py-1 min-w-[160px] z-50">
                     <Link 
-                      to="/crypto-payment" 
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                      onClick={() => setIsMFEDropdownOpen(false)}
-                    >
-                      Crypto Payment
-                    </Link>
-                    <Link 
                       to="/adyen-payment" 
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       onClick={() => setIsMFEDropdownOpen(false)}
@@ -84,7 +76,6 @@ export const App = () => {
       <main className="mx-auto max-w-6xl px-4 py-8">
         <Routes>
           <Route path="/" element={<CatalogPage />} />
-          <Route path="/crypto-payment" element={<CryptoPaymentIntegration />} />
           <Route path="/adyen-payment" element={<AdyenPaymentIntegration />} />
         </Routes>
       </main>

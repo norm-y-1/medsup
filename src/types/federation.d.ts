@@ -1,19 +1,5 @@
 // Type declarations for Module Federation remotes
 
-declare module 'crypto-payment/CryptoPaymentApp' {
-  import { ComponentType } from 'react';
-  
-  interface CryptoPaymentAppProps {
-    initialAmount?: number;
-    initialCurrency?: 'USD' | 'EUR';
-    onPaymentSuccess?: (paymentId: string) => void;
-    onPaymentError?: (error: string) => void;
-  }
-  
-  const CryptoPaymentApp: ComponentType<CryptoPaymentAppProps>;
-  export default CryptoPaymentApp;
-}
-
 declare module 'adyen-payment/AdyenPaymentApp' {
   import { ComponentType } from 'react';
   
