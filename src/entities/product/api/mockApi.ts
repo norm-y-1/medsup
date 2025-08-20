@@ -131,12 +131,5 @@ export const api = {
     writeJSON('seeded', false)
     seed()
     await delay(undefined)
-  },
-  async createProduct(input: Omit<Product, 'id'>): Promise<Product> {
-    const product: Product = { ...input, id: newId('p') }
-    const all = readJSON<Product[]>(DB_KEYS.products, [])
-    all.push(product)
-    writeJSON(DB_KEYS.products, all)
-    return delay(product)
   }
 }

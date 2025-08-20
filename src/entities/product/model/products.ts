@@ -6,7 +6,6 @@ export const fetchCategoriesFx = createEffect<void, Category[]>(api.categories);
 export const fetchProductsFx = createEffect<ProductFilter | void, { items: Product[]; total: number }>(
   (filter) => api.listProducts(filter ?? {})
 );
-export const createProductFx = createEffect<Omit<Product, 'id'> & { id?: string }, Product>(api.createProduct);
 
 // 👇 accept partial patches & merge into current filter
 export const filterChanged = createEvent<Partial<ProductFilter>>();

@@ -1,12 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useUnit } from 'effector-react';
-import { $categories, $products, $total, createProductFx, fetchCategoriesFx, fetchProductsFx, filterChanged } from '../entities/product/model/products';
+import { $categories, $products, $total, fetchCategoriesFx, fetchProductsFx, filterChanged } from '../entities/product/model/products';
 import { ProductCard } from '../entities/product/ui/ProductCard';
 import { CategoryId, Product } from '../shared/types';
 import { useDebouncedValue } from '../shared/hooks/useDebouncedValue';
 import Dropdown from '../shared/ui/Dropdown';
-import Popup from '../shared/ui/Popup';
-import { ProductForm } from '../entities/product/ui/ProductForm';
 
 export function CatalogPage() {
   const [products, total, categories] = useUnit([$products, $total, $categories]);
@@ -42,13 +40,8 @@ export function CatalogPage() {
     { id: 'price-desc', text: 'Price (High to Low)', value: 'price-desc' },
   ];
 
-  const [isCreateMode, setIsCreateMode] = useState<boolean>(false);
-
   return (
     <div className="space-y-6">
-      {/* <button className='btn btn-primary' onClick={() => setIsCreateMode(!isCreateMode)}>
-        Create
-      </button> */}
       <div className="flex flex-col md:flex-row md:items-end gap-4">
         <div className="flex-1">
           <label className="text-xs text-slate-500">Search</label>
@@ -92,20 +85,6 @@ export function CatalogPage() {
       </div>
 
       <div className="text-sm text-slate-500">{total} products</div>
-      {isCreateMode && (
-        <Popup isOpen={isCreateMode} onClose={() => setIsCreateMode(false)}>
-          <h2>Create Product</h2>
-          {/* Form for creating a product */}
-          <ProductForm
-            onSubmit={(product) => {
-              // Handle product creation
-              console.log('Creating product:', product);
-              createProductFx(product)
-              fetchProductsFx()
-              setIsCreateMode(false);
-            }} onCancel={() => setIsCreateMode(false)} />
-        </Popup>
-      )}
     </div>
   );
 }
