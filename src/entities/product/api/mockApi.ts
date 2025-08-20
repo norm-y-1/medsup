@@ -46,7 +46,7 @@ function seed() {
       sku: 'NGL-200',
       uom: 'box',
       stock: 120,
-      image: 'https://www.medline.com/media/catalog/CA02/CA02_03/CA02_03_01/CA02_03_01_08/PF293374/D1200013541080_280320250825.jpg'
+      image: 'https://www.medline.com/media/catalog/CA02/CA02_06/PF21882/D1200012663292664_100420250738.jpg'
     },
     {
       id: newId('p'),

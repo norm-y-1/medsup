@@ -14,5 +14,6 @@
     "exactOptionalPropertyTypes": true,
     "noUncheckedIndexedAccess": true
   },
-  "include": ["src", "vite.config.ts", "jest.config.ts", "setupTests.ts", "react-app-env.d.ts"]
+  "include": ["src", "vite.config.ts", "react-app-env.d.ts"],
+  "exclude": ["src/**/__tests__/**/*", "cypress/**/*", "coverage/**/*"]
 }

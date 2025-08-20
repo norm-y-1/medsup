@@ -19,6 +19,7 @@ interface DropdownProps {
   error?: string;
   defaultValue?: string | number;
   disabled?: boolean;
+  dataTestId?: string;
 }
 
 const DropdownUI = ({
@@ -30,6 +31,7 @@ const DropdownUI = ({
   error,
   defaultValue,
   disabled = false,
+  dataTestId = ""
 }: DropdownProps) => {
   const [isActive, setIsActive] = useState<boolean>(false);
   const [selected, setSelected] = useState<string | number | undefined>(text);
@@ -58,7 +60,7 @@ const DropdownUI = ({
   };
 
   return (
-    <div className={`w-full min-w-[200px] ${classN}`} ref={ref}>
+    <div data-testid={dataTestId} className={`w-full min-w-[200px] ${classN}`} ref={ref}>
       {label && <label className="text-xs text-slate-500">{label}</label>}
       {error && <span className="text-sm text-red-500">{error}</span>}
 
@@ -92,6 +94,7 @@ const DropdownUI = ({
         {/* Dropdown content */}
         <div
           ref={contentRef}
+          data-testid="category-option"
           className={`absolute left-0 mt-2 max-h-60 w-full overflow-y-auto rounded-lg border bg-white shadow-lg transition-all
             ${
               isActive

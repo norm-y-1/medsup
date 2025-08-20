@@ -68,6 +68,7 @@ export function CatalogPage() {
             onChange={(option) => filterChanged({ categoryId: option.id as CategoryId })}
             label="Select Category"
             classN="w-56"
+            dataTestId="category-dropdown"
           />
         </div>
 

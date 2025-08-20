@@ -8,7 +8,10 @@ const config: Config = {
   testEnvironment: 'jsdom',
   testEnvironmentOptions: { url: 'http://localhost' },
   transform: {
-    '^.+\\.(t|j)sx?$': ['ts-jest', { tsconfig: 'tsconfig.json', useESM: true }],
+    '^.+\\.(t|j)sx?$': ['ts-jest', { 
+      tsconfig: 'tsconfig.jest.json', 
+      useESM: true 
+    }],
   },
   moduleNameMapper: {
     '\\.(css|sass|scss|less)$': 'identity-obj-proxy',
@@ -16,6 +19,7 @@ const config: Config = {
       '<rootDir>/src/__mocks__/fileMock.ts',
   },
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+  testMatch: ['<rootDir>/src/**/__tests__/jest/**/*.(test|spec).(ts|tsx|js|jsx)']
 };
 
 export default config;

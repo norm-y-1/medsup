@@ -1,0 +1,13 @@
+{
+  "typescript.preferences.useAliasesForRenames": false,
+  "typescript.preferences.includePackageJsonAutoImports": "on",
+  "typescript.preferences.useLabelDetailsInCompletionEntries": true,
+  "typescript.preferences.includeCompletionsForModuleExports": true,
+  "typescript.preferences.includeCompletionsWithSnippetText": true,
+  "files.associations": {
+    "**/src/**/__tests__/jest/**/*.ts": "typescript",
+    "**/src/**/__tests__/jest/**/*.tsx": "typescriptreact",
+    "**/cypress/**/*.ts": "typescript",
+    "**/src/**/__tests__/cypress/**/*.ts": "typescript"
+  }
+}
