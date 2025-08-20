@@ -14,6 +14,20 @@ declare module 'crypto-payment/CryptoPaymentApp' {
   export default CryptoPaymentApp;
 }
 
+declare module 'adyen-payment/AdyenPaymentApp' {
+  import { ComponentType } from 'react';
+  
+  interface AdyenPaymentAppProps {
+    initialAmount?: number;
+    initialCurrency?: 'USD' | 'EUR' | 'GBP';
+    onPaymentSuccess?: (paymentId: string) => void;
+    onPaymentError?: (error: string) => void;
+  }
+  
+  const AdyenPaymentApp: ComponentType<AdyenPaymentAppProps>;
+  export default AdyenPaymentApp;
+}
+
 declare module 'crypto-payment/store' {
   import { Store, Event, Effect } from 'effector';
   import { CryptoCurrency, PaymentRequest, PaymentFormData } from 'crypto-payment/types';

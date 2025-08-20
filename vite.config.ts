@@ -9,7 +9,8 @@ export default defineConfig({
     federation({
       name: 'shell',
       remotes: {
-        'crypto-payment': 'http://localhost:3001/remoteEntry.js'
+        'crypto-payment': 'http://localhost:3001/remoteEntry.js',
+        'adyen-payment': 'http://localhost:3000/remoteEntry.js'
       },
       shared: {
         react: {

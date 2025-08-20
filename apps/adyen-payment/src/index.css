@@ -1,0 +1,139 @@
+/* Import Adyen Web SDK styles first */
+@import '@adyen/adyen-web/dist/adyen.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Adyen component styling */
+.adyen-checkout {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Override Adyen Drop-in container styling */
+#dropin-container .adyen-checkout__payment-method {
+  border: none !important;
+  box-shadow: none !important;
+  margin-bottom: 0.5rem;
+}
+
+#dropin-container .adyen-checkout__payment-method--selected {
+  border: 2px solid #3B82F6 !important;
+  border-radius: 0.5rem;
+}
+
+#dropin-container .adyen-checkout__button {
+  background-color: #3B82F6 !important;
+  border-color: #3B82F6 !important;
+  border-radius: 0.5rem !important;
+  font-weight: 500 !important;
+  padding: 0.75rem 1.5rem !important;
+  transition: background-color 0.2s ease-in-out !important;
+}
+
+#dropin-container .adyen-checkout__button:hover {
+  background-color: #2563EB !important;
+  border-color: #2563EB !important;
+}
+
+#dropin-container .adyen-checkout__button:disabled {
+  background-color: #9CA3AF !important;
+  border-color: #9CA3AF !important;
+  cursor: not-allowed !important;
+}
+
+#dropin-container .adyen-checkout__input {
+  border: 1px solid #D1D5DB !important;
+  border-radius: 0.375rem !important;
+  padding: 0.5rem 0.75rem !important;
+  font-size: 0.875rem !important;
+}
+
+#dropin-container .adyen-checkout__input:focus {
+  border-color: #3B82F6 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+  outline: none !important;
+}
+
+#dropin-container .adyen-checkout__label {
+  color: #374151 !important;
+  font-weight: 500 !important;
+  font-size: 0.875rem !important;
+  margin-bottom: 0.25rem !important;
+}
+
+#dropin-container .adyen-checkout__error-text {
+  color: #EF4444 !important;
+  font-size: 0.75rem !important;
+  margin-top: 0.25rem !important;
+}
+
+/* Payment method icons styling */
+#dropin-container .adyen-checkout__payment-method__image {
+  height: 24px !important;
+  width: auto !important;
+  max-width: 40px !important;
+}
+
+#dropin-container .adyen-checkout__payment-method__name {
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  color: #1F2937 !important;
+}
+
+/* Loading state styling */
+#dropin-container .adyen-checkout__spinner {
+  border-color: #3B82F6 transparent #3B82F6 transparent !important;
+}
+
+/* Card form specific styling */
+#dropin-container .adyen-checkout__card__form {
+  padding: 1rem !important;
+  background-color: #F9FAFB !important;
+  border-radius: 0.5rem !important;
+  margin-top: 0.5rem !important;
+}
+
+#dropin-container .adyen-checkout__field-group {
+  margin-bottom: 1rem !important;
+}
+
+/* 3D Secure styling */
+#dropin-container .adyen-checkout__threeds2__challenge {
+  border-radius: 0.5rem !important;
+  overflow: hidden !important;
+}
+
+/* Payment form animations */
+.payment-form-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.payment-form-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.payment-form-exit {
+  opacity: 1;
+}
+
+.payment-form-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  #dropin-container .adyen-checkout__payment-method {
+    padding: 0.75rem !important;
+  }
+  
+  #dropin-container .adyen-checkout__button {
+    width: 100% !important;
+    padding: 1rem !important;
+  }
+}

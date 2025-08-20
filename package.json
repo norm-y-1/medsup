@@ -9,12 +9,15 @@
   "scripts": {
     "dev": "vite --port 5173",
     "dev:crypto-payment": "cd apps/crypto-payment && yarn dev",
-    "dev:all": "concurrently \"yarn dev:crypto-payment\" \"yarn dev\"",
+    "dev:adyen-payment": "cd apps/adyen-payment && yarn dev",
+    "dev:all": "concurrently \"yarn dev:crypto-payment\" \"yarn dev:adyen-payment\" \"yarn dev\"",
     "build": "tsc -b && vite build",
     "build:crypto-payment": "cd apps/crypto-payment && yarn build",
-    "build:all": "yarn build:crypto-payment && yarn build",
+    "build:adyen-payment": "cd apps/adyen-payment && yarn build",
+    "build:all": "yarn build:crypto-payment && yarn build:adyen-payment && yarn build",
     "preview": "vite preview",
     "preview:crypto-payment": "cd apps/crypto-payment && yarn preview",
+    "preview:adyen-payment": "cd apps/adyen-payment && yarn preview",
     "test:jest": "jest --config jest.config.ts",
     "test:cypress": "cypress run",
     "test:jasmine": "jasmine --config=jasmine.json"

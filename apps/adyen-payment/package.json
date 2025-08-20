@@ -1,0 +1,30 @@
+{
+  "name": "@medsup/adyen-payment",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 3000",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --port 3000",
+    "serve": "vite preview --port 3000"
+  },
+  "dependencies": {
+    "@adyen/adyen-web": "^5.64.0",
+    "@originjs/vite-plugin-federation": "^1.4.1",
+    "effector": "^23.4.2",
+    "effector-react": "^23.3.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.20",
+    "@vitejs/plugin-react": "^5.0.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.41",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.9.2",
+    "vite": "^5.4.1"
+  }
+}

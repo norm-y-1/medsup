@@ -1,0 +1,325 @@
+/* Custom Adyen Drop-in Styling to match the screenshot */
+.adyen-checkout-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Override Adyen default styles to match the design */
+.adyen-checkout__dropin {
+  max-width: 400px;
+  margin: 0 auto;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Card form styling */
+.adyen-checkout__card {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 20px;
+  background: white;
+  box-shadow: none;
+  margin-bottom: 12px;
+}
+
+/* Payment method header */
+.adyen-checkout__payment-method__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.adyen-checkout__payment-method__name {
+  font-weight: 600;
+  color: #111827;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.adyen-checkout__payment-method__name::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: #1a202c;
+  border-radius: 2px;
+  margin-right: 12px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z'/%3E%3C/svg%3E");
+  background-size: 14px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Required field indicator */
+.adyen-checkout__label::after {
+  content: " *";
+  color: #ef4444;
+  font-weight: normal;
+}
+
+/* Form fields */
+.adyen-checkout__input {
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  padding: 12px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  width: 100%;
+  background: white;
+}
+
+.adyen-checkout__input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 1px #3b82f6;
+  outline: none;
+}
+
+/* Card number field */
+.adyen-checkout__card__cardNumber {
+  margin-bottom: 16px;
+}
+
+.adyen-checkout__card__cardNumber .adyen-checkout__input {
+  font-size: 16px;
+  letter-spacing: 1px;
+  padding-right: 50px; /* Space for card icons */
+}
+
+/* Expiry and CVC row */
+.adyen-checkout__card__exp-cvc {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+/* Labels */
+.adyen-checkout__label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+/* Helper text for fields */
+.adyen-checkout__card__exp-date .adyen-checkout__helper-text,
+.adyen-checkout__card__cvc .adyen-checkout__helper-text {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+/* Card brand icons */
+.adyen-checkout__card__cardNumber__brandIcon {
+  position: absolute !important;
+  right: 12px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 32px !important;
+  height: 20px !important;
+}
+
+/* Multiple brand icons */
+.adyen-checkout__icon {
+  width: 24px;
+  height: 16px;
+  margin-right: 4px;
+}
+
+/* Store details checkbox */
+.adyen-checkout__checkbox {
+  margin: 16px 0;
+}
+
+.adyen-checkout__checkbox__label {
+  display: flex;
+  align-items: flex-start;
+  font-size: 14px;
+  color: #374151;
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+.adyen-checkout__checkbox__input {
+  margin-right: 8px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* Pay button */
+.adyen-checkout__button--pay {
+  width: 100% !important;
+  background: #1e3a8a !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 6px !important;
+  padding: 16px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: background-color 0.2s ease !important;
+  margin-top: 16px !important;
+  text-transform: none !important;
+}
+
+.adyen-checkout__button--pay:hover {
+  background: #1d4ed8 !important;
+}
+
+.adyen-checkout__button--pay:disabled {
+  background: #9ca3af !important;
+  cursor: not-allowed !important;
+}
+
+/* Payment amount in button */
+.adyen-checkout__button__text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.adyen-checkout__button__text::before {
+  content: "🔒 ";
+  margin-right: 8px;
+}
+
+/* Loading spinner */
+.adyen-checkout__spinner {
+  border: 2px solid #e5e7eb;
+  border-top: 2px solid #3b82f6;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error messages */
+.adyen-checkout__field--error .adyen-checkout__input {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 1px #ef4444 !important;
+}
+
+.adyen-checkout__error-text {
+  color: #ef4444;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Success state */
+.adyen-checkout__status--success {
+  color: #10b981;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  font-weight: 600;
+}
+
+/* Other payment methods like iDEAL, BLIK */
+.adyen-checkout__payment-method-list {
+  margin-top: 12px;
+}
+
+.adyen-checkout__payment-method {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  background: white;
+}
+
+.adyen-checkout__payment-method:hover {
+  background-color: #f9fafb;
+}
+
+.adyen-checkout__payment-method__logo {
+  width: 40px;
+  height: 25px;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.adyen-checkout__payment-method__details {
+  flex: 1;
+}
+
+.adyen-checkout__payment-method__name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+}
+
+/* iDEAL styling */
+.adyen-checkout__payment-method[data-payment-method="ideal"] .adyen-checkout__payment-method__logo {
+  background: linear-gradient(45deg, #ff6b9d, #c44569);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.adyen-checkout__payment-method[data-payment-method="ideal"] .adyen-checkout__payment-method__logo::after {
+  content: "iDeal";
+}
+
+/* BLIK styling */
+.adyen-checkout__payment-method[data-payment-method="blik"] .adyen-checkout__payment-method__logo {
+  background: #ff6b6b;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 10px;
+}
+
+.adyen-checkout__payment-method[data-payment-method="blik"] .adyen-checkout__payment-method__logo::after {
+  content: "BLIK";
+}
+
+/* Klarna styling */
+.adyen-checkout__payment-method[data-payment-method="klarna"] .adyen-checkout__payment-method__logo {
+  background: #ffb3d6;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-weight: bold;
+  font-size: 8px;
+}
+
+.adyen-checkout__payment-method[data-payment-method="klarna"] .adyen-checkout__payment-method__logo::after {
+  content: "Klarna Pay now";
+  font-size: 8px;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .adyen-checkout__card {
+    padding: 16px;
+  }
+  
+  .adyen-checkout__card__exp-cvc {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
