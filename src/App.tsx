@@ -26,7 +26,7 @@ export const App = () => {
               onClick={() => navigate('/')}
               className="text-xl font-semibold tracking-tight text-brand-700"
             >
-              MedSup Pro
+              InsureCare POC
             </button>
             <nav className="flex gap-4">
               <Link to="/" className="text-sm font-medium text-gray-600 hover:text-gray-900">
@@ -46,11 +46,11 @@ export const App = () => {
                 {isMFEDropdownOpen && (
                   <div className="absolute top-full left-0 mt-1 bg-white border border-gray-200 rounded-md shadow-lg py-1 min-w-[160px] z-50">
                     <Link 
-                      to="/adyen-payment" 
+                      to="/mfe-payment" 
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       onClick={() => setIsMFEDropdownOpen(false)}
                     >
-                      Adyen Payment
+                      Payment MFE
                     </Link>
                   </div>
                 )}
@@ -76,7 +76,7 @@ export const App = () => {
       <main className="mx-auto max-w-6xl px-4 py-8">
         <Routes>
           <Route path="/" element={<CatalogPage />} />
-          <Route path="/adyen-payment" element={<AdyenPaymentIntegration />} />
+          <Route path="/mfe-payment" element={<AdyenPaymentIntegration />} />
         </Routes>
       </main>
 

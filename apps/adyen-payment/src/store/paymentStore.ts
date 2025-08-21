@@ -36,7 +36,7 @@ export const $paymentForm = createStore<PaymentFormData>({
   currency: 'EUR',
   reference: '',
   shopperEmail: '',
-  description: 'MedSup Pro Payment'
+  description: 'InsureCare POC Payment'
 });
 
 export const $paymentState = createStore<PaymentState>({

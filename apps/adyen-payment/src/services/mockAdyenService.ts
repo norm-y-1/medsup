@@ -164,7 +164,7 @@ export class MockAdyenService {
           ],
           configuration: {
             merchantId: 'TestMerchant',
-            merchantName: 'MedSup Pro'
+            merchantName: 'InsureCare POC'
           }
         },
         {

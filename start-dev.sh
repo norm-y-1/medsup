@@ -2,7 +2,7 @@
 
 # Script to start both the main app and adyen-payment microfrontend
 
-echo "🚀 Starting MedSup Pro with Adyen Payment Microfrontend..."
+echo "🚀 Starting InsureCare POC with Adyen Payment Microfrontend..."
 
 # Function to kill background processes on exit
 cleanup() {
@@ -24,7 +24,7 @@ ADYEN_PID=$!
 sleep 3
 
 # Start main application
-echo "🏥 Starting Main MedSup Pro Application on port 5173..."
+echo "🏥 Starting Main InsureCare POC Application on port 5173..."
 cd ../..
 yarn dev &
 MAIN_PID=$!

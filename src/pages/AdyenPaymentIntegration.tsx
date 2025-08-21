@@ -4,7 +4,7 @@ import React, { Suspense, useState, useCallback, useEffect } from 'react';
 const LoadingFallback = () => (
   <div className="flex justify-center items-center py-12">
     <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-    <span className="ml-3 text-gray-600">Loading Adyen Payment...</span>
+    <span className="ml-3 text-gray-600">Loading Payment MFE...</span>
   </div>
 );
 
@@ -13,7 +13,7 @@ const IframeAdyenPayment = () => (
   <div className="w-full max-w-4xl mx-auto">
     <div className="bg-white rounded-lg shadow-lg overflow-hidden">
       <div className="p-4 border-b bg-gray-50">
-        <h3 className="text-lg font-semibold">Adyen Payment Service</h3>
+        <h3 className="text-lg font-semibold">Payment MFE Service</h3>
         <p className="text-sm text-gray-600">Loaded via iframe integration</p>
       </div>
       <iframe 
@@ -22,7 +22,7 @@ const IframeAdyenPayment = () => (
         height="800"
         frameBorder="0"
         className="w-full"
-        title="Adyen Payment Microfrontend"
+        title="Payment MFE"
       />
     </div>
   </div>
@@ -248,7 +248,7 @@ function AdyenPaymentIntegration({
         <div className="px-4 py-6 sm:px-0">
           <div className="text-center mb-8">
             <h1 className="text-3xl font-bold text-gray-900 mb-2">
-              Adyen Payment Integration
+              Payment MFE Integration
             </h1>
             <p className="text-lg text-gray-600">
               Module Federation with iframe fallback

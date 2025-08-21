@@ -1,7 +1,7 @@
 @echo off
 REM Script to start both the main app and adyen-payment microfrontend on Windows
 
-echo 🚀 Starting MedSup Pro with Adyen Payment Microfrontend (Module Federation)...
+echo 🚀 Starting InsureCare POC with Adyen Payment Microfrontend (Module Federation)...
 
 REM Start adyen-payment microfrontend first (it needs to be available for federation)
 echo 📱 Starting Adyen Payment Microfrontend on port 3000...
@@ -14,7 +14,7 @@ timeout /t 8 /nobreak >nul
 
 REM Start main application
 cd ..\..
-echo 🏥 Starting Main MedSup Pro Shell Application on port 5173...
+echo 🏥 Starting Main InsureCare POC Shell Application on port 5173...
 start "MedSup Shell" cmd /k "yarn dev"
 
 echo.

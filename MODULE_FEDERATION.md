@@ -1,4 +1,4 @@
-# MedSup Pro - Module Federation Architecture
+# InsureCare POC - Module Federation Architecture
 
 ## Overview
 
@@ -11,7 +11,7 @@ This project implements a **Module Federation** architecture using Vite, where t
 │                    Shell Application                        │
 │                   (localhost:5173)                         │
 │  ┌─────────────────────────────────────────────────────┐   │
-│  │              Main MedSup Pro App                    │   │
+│  │              Main InsureCare POC App                    │   │
 │  │  - Product Catalog                                  │   │
 │  │  - Shopping Cart                                    │   │
 │  │  - User Interface                                   │   │

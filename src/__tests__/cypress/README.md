@@ -1,6 +1,6 @@
-# Cypress E2E Tests for MedSup Pro
+# Cypress E2E Tests for InsureCare POC
 
-This directory contains comprehensive end-to-end tests for the MedSup Pro application using Cypress.
+This directory contains comprehensive end-to-end tests for the InsureCare POC application using Cypress.
 
 ## Test Structure
 

@@ -1,4 +1,4 @@
-# MedSup Pro — Medicine Supply Demo
+# InsureCare POC — Medicine Supply Demo
 
 A **small but professional** frontend demo for a medical supplies catalog. Built with **React + Vite + TS + Tailwind + Effector** with a local **mock API** (persisted in `localStorage`). Includes **Jest** unit tests, a **Cypress** E2E example, and a tiny **Jasmine** spec to showcase multiple test runners.
 
