@@ -73,7 +73,7 @@ export const App = () => {
         </div>
       </header>
 
-      <main className="mx-auto px-4 py-8 max-w-[1440px] w-full">
+      <main className="mx-auto py-8 max-w-[1440px] w-full px-20">
         <Routes>
           <Route path="/" element={<CatalogPage />} />
           <Route path="/mfe-payment" element={<AdyenPaymentIntegration />} />
