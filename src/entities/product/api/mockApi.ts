@@ -80,6 +80,39 @@ function seed() {
       uom: 'ea',
       stock: 50,
       image: 'https://www.medline.com/media/catalog/sku/DYN/D1200012663319509_270520240808.jpg'
+    },
+    {
+      id: newId('p'),
+      name: 'Anesthesia Mask (medium)',
+      description: 'Soft cushion for improved patient comfort.',
+      categoryId: 'anesthesia',
+      priceCents: 1123,
+      sku: 'ANM-M',
+      uom: 'ea',
+      stock: 50,
+      image: 'https://www.medline.com/media/catalog/sku/DYN/D1200012663319509_270520240808.jpg'
+    },
+    {
+      id: newId('p'),
+      name: 'Anesthesia Mask (large)',
+      description: 'Soft cushion for improved patient comfort.',
+      categoryId: 'anesthesia',
+      priceCents: 1123,
+      sku: 'ANM-L',
+      uom: 'ea',
+      stock: 50,
+      image: 'https://www.medline.com/media/catalog/sku/DYN/D1200012663319509_270520240808.jpg'
+    },
+    {
+      id: newId('p'),
+      name: 'Anesthesia Mask (extra large)',
+      description: 'Soft cushion for improved patient comfort.',
+      categoryId: 'anesthesia',
+      priceCents: 1123,
+      sku: 'ANM-XL',
+      uom: 'ea',
+      stock: 50,
+      image: 'https://www.medline.com/media/catalog/sku/DYN/D1200012663319509_270520240808.jpg'
     }
   ]
   writeJSON(DB_KEYS.categories, categories)
